@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Square Runner</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+<body>
     <div class="game-wrapper">
-      <div id="gameArea">
-        <div id="score">Score: 0</div>
-        <div id="player"></div>
-        <div id="obstacles"></div>
-        <button id="restartBtn" hidden>Restart</button>
-      </div>
+        <div class="hud">
+            <div id="scoreDisplay">Score: 0</div>
+            <div id="bestScoreDisplay">Best: 0</div>
+        </div>
+        <canvas id="gameCanvas" width="900" height="400"></canvas>
+        <button id="restartBtn" class="hidden">Restart</button>
     </div>
     <script src="game.js"></script>
-  </body>
+</body>
 </html>

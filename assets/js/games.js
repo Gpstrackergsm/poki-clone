@@ -94,6 +94,14 @@ const games = [
     category: "adventure",
     iframe: "https://itch.io/embed-upload/10944643?color=333333",
     description: "Chart a course through alien biomes, catalog curious creatures, and become the galaxy's top explorer."
+  },
+  {
+    id: "square-runner",
+    title: "Square Runner",
+    category: "Action",
+    thumbnail: "https://picsum.photos/300?random=999",
+    iframe: "/assets/games/square-runner/index.html",
+    description: "Dodge falling obstacles and survive as long as possible in this fast-paced action game."
   }
 ];
 
