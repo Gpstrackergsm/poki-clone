@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poki Clone - Play Free Online Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/games.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="home">
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="./">Poki<span>Clone</span></a>
+            <div class="search-bar">
+                <span class="material-icon" aria-hidden="true">🔍</span>
+                <label class="visually-hidden" for="search-input">Search games</label>
+                <input id="search-input" type="search" placeholder="Search games" autocomplete="off" />
+            </div>
+            <nav class="category-nav" aria-label="Categories">
+                <button class="category-btn active" data-category="all">All Games</button>
+                <button class="category-btn" data-category="action">Action</button>
+                <button class="category-btn" data-category="adventure">Adventure</button>
+                <button class="category-btn" data-category="puzzle">Puzzle</button>
+                <button class="category-btn" data-category="sports">Sports</button>
+                <button class="category-btn" data-category="strategy">Strategy</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <section class="hero">
+            <h1>Discover, Play &amp; Enjoy Free Online Games</h1>
+            <p>Jump into an ever-growing library of hand-picked games. Search, filter, and find your next obsession instantly.</p>
+        </section>
+
+        <section class="games-section" aria-labelledby="games-heading">
+            <div class="section-heading">
+                <h2 id="games-heading">Featured Games</h2>
+                <p class="results-count" id="results-count"></p>
+            </div>
+            <div id="game-grid" class="game-grid" role="list"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Poki Clone. All games are fictional demos.</p>
+    </footer>
+</body>
+</html>

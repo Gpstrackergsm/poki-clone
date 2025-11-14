@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poki Clone - Play Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/games.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="game">
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="./">Poki<span>Clone</span></a>
+            <div class="search-bar only-logo">
+                <h1 id="game-title" class="game-page-title">Loading game...</h1>
+            </div>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span aria-hidden="true">&rsaquo;</span>
+                <span id="breadcrumb-game">Game</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main game-layout">
+        <section class="game-hero" aria-labelledby="game-title">
+            <div class="game-meta">
+                <p id="game-category" class="game-category"></p>
+                <p id="game-description" class="game-description"></p>
+            </div>
+            <div class="game-player">
+                <iframe id="game-iframe" title="Game frame" src="about:blank" loading="lazy"></iframe>
+                <button id="fullscreen-btn" class="fullscreen-btn" type="button">Enter Fullscreen</button>
+            </div>
+        </section>
+
+        <section class="games-section" aria-labelledby="related-heading">
+            <div class="section-heading">
+                <h2 id="related-heading">Related Games</h2>
+            </div>
+            <div id="related-grid" class="game-grid related-grid" role="list"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Poki Clone. All games are fictional demos.</p>
+    </footer>
+</body>
+</html>
