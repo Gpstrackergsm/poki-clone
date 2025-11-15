@@ -1,0 +1,34 @@
+[
+  {
+    "id": "meet_villager",
+    "name": "Meet the Villager",
+    "description": "Introduce yourself to Lina in the square.",
+    "giver": "lina",
+    "steps": [
+      { "type": "talk", "target": "lina" }
+    ],
+    "reward": { "coins": 20 }
+  },
+  {
+    "id": "missing_item",
+    "name": "Bring the Missing Item",
+    "description": "Bram lost a coin pouch. Find it near the plaza and return it.",
+    "giver": "bram",
+    "steps": [
+      { "type": "pickup", "item": "coin_pouch", "location": [30,30] },
+      { "type": "talk", "target": "bram" }
+    ],
+    "reward": { "item": "wheat_seeds", "quantity": 3 }
+  },
+  {
+    "id": "first_harvest",
+    "name": "Harvest Your First Crop",
+    "description": "Plant and harvest a wheat crop on your farm.",
+    "giver": "mayor",
+    "steps": [
+      { "type": "plant", "item": "wheat_seeds" },
+      { "type": "harvest", "item": "wheat" }
+    ],
+    "reward": { "coins": 50, "item": "bread", "quantity": 1 }
+  }
+]

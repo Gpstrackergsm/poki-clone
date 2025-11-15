@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelia Valley</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="900" height="600"></canvas>
+    <div id="ui-layer">
+      <div id="dialog-box" class="panel hidden">
+        <div id="dialog-name"></div>
+        <div id="dialog-text"></div>
+        <button id="dialog-next">Continue</button>
+      </div>
+      <div id="inventory-window" class="panel hidden">
+        <h2>Inventory</h2>
+        <div id="inventory-grid"></div>
+      </div>
+      <div id="quest-log" class="panel hidden">
+        <h2>Quests</h2>
+        <div id="quest-entries"></div>
+      </div>
+      <div id="hud">
+        <div id="health-bar"><span></span></div>
+        <div id="clock-display">Day 1 - 06:00</div>
+      </div>
+      <div id="touch-controls">
+        <div id="joystick">
+          <div id="joystick-stick"></div>
+        </div>
+        <button id="touch-interact">E</button>
+      </div>
+    </div>
+  </div>
+  <script src="sprites.js"></script>
+  <script src="sounds.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

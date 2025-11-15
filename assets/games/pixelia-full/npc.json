@@ -1,0 +1,70 @@
+[
+  {
+    "id": "lina",
+    "name": "Lina",
+    "spriteIndex": 0,
+    "x": 32,
+    "y": 28,
+    "dialog": [
+      "Welcome to Pixelia!",
+      "Have you met the others yet?",
+      "The town square is lively during the day."
+    ],
+    "schedule": {
+      "morning": { "map": "overworld", "route": [[32,28],[34,28],[34,30],[32,30]] },
+      "noon": { "map": "townhall", "route": [[6,6]] },
+      "evening": { "map": "npc_house", "route": [[6,8]] }
+    }
+  },
+  {
+    "id": "bram",
+    "name": "Bram",
+    "spriteIndex": 1,
+    "x": 28,
+    "y": 34,
+    "dialog": [
+      "Fresh tools for your farm!",
+      "Need seeds? I've got plenty.",
+      "Don't forget to water your crops."
+    ],
+    "schedule": {
+      "morning": { "map": "shop", "route": [[6,6]] },
+      "noon": { "map": "overworld", "route": [[28,34],[30,34],[30,32]] },
+      "evening": { "map": "shop", "route": [[6,6]] }
+    }
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "spriteIndex": 2,
+    "x": 42,
+    "y": 44,
+    "dialog": [
+      "The soil near the farm is fertile.",
+      "Plant a seed and watch it grow!",
+      "Night brings a calm hum to the valley."
+    ],
+    "schedule": {
+      "morning": { "map": "farm", "route": [[6,6],[8,6],[8,8]] },
+      "noon": { "map": "overworld", "route": [[42,44],[44,44],[44,46]] },
+      "evening": { "map": "npc_house", "route": [[6,8]] }
+    }
+  },
+  {
+    "id": "mayor",
+    "name": "Mayor Jun",
+    "spriteIndex": 3,
+    "x": 30,
+    "y": 28,
+    "dialog": [
+      "Welcome, new resident!",
+      "Our town thrives when everyone helps.",
+      "Visit the town hall for quests."
+    ],
+    "schedule": {
+      "morning": { "map": "townhall", "route": [[7,7],[7,9]] },
+      "noon": { "map": "overworld", "route": [[30,28],[32,28],[32,26]] },
+      "evening": { "map": "townhall", "route": [[7,9]] }
+    }
+  }
+]
