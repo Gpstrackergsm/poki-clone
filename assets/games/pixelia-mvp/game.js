@@ -31,6 +31,7 @@
 
   function initialize(map) {
     state.map = map;
+    if (!map) return;
     const tileSize = map.tileSize;
     state.player = {
       x: map.playerStart.x * tileSize,
@@ -47,14 +48,17 @@
     state.npc = {
       x: map.npc.x * tileSize,
       y: map.npc.y * tileSize,
-      sprite: SPRITES.npc.idle
+      baseX: map.npc.x * tileSize,
+      baseY: map.npc.y * tileSize,
+      sprite: SPRITES.npc.idle,
+      bobTimer: 0
     };
 
     state.dialog.lines = map.dialog || [];
 
     setupControls();
     lastTimestamp = performance.now();
-    requestAnimationFrame(loop);
+    requestAnimationFrame(gameLoop);
   }
 
   const keyBindings = {
@@ -72,7 +76,6 @@
     window.addEventListener("keydown", (event) => {
       if (event.code in keyBindings) {
         keyboard[keyBindings[event.code]] = true;
-        event.preventDefault();
       } else if (event.code === "Space" || event.code === "Enter") {
         event.preventDefault();
         handleInteraction();
@@ -82,7 +85,6 @@
     window.addEventListener("keyup", (event) => {
       if (event.code in keyBindings) {
         keyboard[keyBindings[event.code]] = false;
-        event.preventDefault();
       }
     });
 
@@ -241,6 +243,12 @@
       player.frame = 0;
     }
 
+  }
+
+  function updateCamera() {
+    const { map, player } = state;
+    if (!map) return;
+    const tileSize = map.tileSize;
     const worldWidth = map.width * tileSize;
     const worldHeight = map.height * tileSize;
 
@@ -250,6 +258,15 @@
 
   function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
+  }
+
+  function updateNpc(dt) {
+    const { npc, map } = state;
+    if (!npc || !map) return;
+    npc.bobTimer += dt * 2;
+    const bobDistance = map.tileSize * 0.2;
+    npc.y = npc.baseY + Math.sin(npc.bobTimer) * bobDistance;
+    npc.x = npc.baseX + Math.cos(npc.bobTimer * 0.5) * (map.tileSize * 0.1);
   }
 
   function clearCanvas() {
@@ -380,18 +397,20 @@
   }
 
   let lastTimestamp = 0;
-  function loop(timestamp) {
+  function gameLoop(timestamp) {
     const dt = Math.min((timestamp - lastTimestamp) / 1000, 0.1);
     lastTimestamp = timestamp;
 
     updatePlayer(dt);
+    updateNpc(dt);
+    updateCamera();
     clearCanvas();
     drawMap();
     drawEntities();
     drawHighlights();
     updateDialogBox();
 
-    requestAnimationFrame(loop);
+    requestAnimationFrame(gameLoop);
   }
 
   loadMap();

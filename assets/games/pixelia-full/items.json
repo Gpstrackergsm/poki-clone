@@ -1,0 +1,38 @@
+{
+  "coin": {
+    "name": "Coin",
+    "description": "Shiny town currency.",
+    "type": "currency"
+  },
+  "coin_pouch": {
+    "name": "Coin Pouch",
+    "description": "A pouch full of coins that belongs to Bram.",
+    "type": "quest"
+  },
+  "hoe": {
+    "name": "Hoe",
+    "description": "Till soil for planting.",
+    "type": "tool"
+  },
+  "watering_can": {
+    "name": "Watering Can",
+    "description": "Keeps crops hydrated.",
+    "type": "tool"
+  },
+  "wheat_seeds": {
+    "name": "Wheat Seeds",
+    "description": "Plant to grow wheat.",
+    "type": "seed",
+    "growthTime": 45000
+  },
+  "wheat": {
+    "name": "Wheat",
+    "description": "A fresh bundle of wheat.",
+    "type": "crop"
+  },
+  "bread": {
+    "name": "Bread",
+    "description": "Restores a bit of warmth.",
+    "type": "food"
+  }
+}
